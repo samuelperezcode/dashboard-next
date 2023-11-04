@@ -1,4 +1,4 @@
-import { montserrat } from './ui/font';
+import { montserrat } from './ui/fonts';
 import './ui/global.css'
 
 export default function RootLayout({
