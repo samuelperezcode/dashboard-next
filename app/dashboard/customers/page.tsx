@@ -1,4 +1,4 @@
-import Layout from "../dashboard-layout"
+import Layout from "../layout"
 
 export default function CustomerPage() {
   return (
