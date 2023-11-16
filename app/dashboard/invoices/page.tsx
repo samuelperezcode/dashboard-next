@@ -14,8 +14,8 @@ interface Props {
 }
 
 export default async function InvoicesPage({searchParams}: Props) {
-  const query = searchParams?.query ?? ''
-  const currentPage = Number(searchParams?.page) ?? 1
+  const query = searchParams?.query || ''
+  const currentPage = Number(searchParams?.page) || 1
   return (
     <section className="w-full">
       <div className="flex w-full items-center justify-between">
