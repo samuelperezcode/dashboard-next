@@ -9,3 +9,4 @@ const FormSchema = z.object({
 });
  
 export const CreateInvoice = FormSchema.omit({ id: true, date: true });
+export const UpdateInvoice = FormSchema.omit({ id: true, date: true });
