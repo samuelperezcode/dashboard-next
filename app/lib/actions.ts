@@ -5,6 +5,7 @@ import { CreateInvoice, UpdateInvoice } from "./schemas"
 import { revalidatePath } from "next/cache"
 import { redirect } from "next/navigation"
 import { signIn } from "@/auth"
+import { signOut } from "next-auth/react"
  
 export type State = {
   errors?: {
@@ -95,4 +96,9 @@ export async function authenticate(
     }
     throw error;
   }
+
+}
+
+export async function logout() {
+  await signOut()
 }
