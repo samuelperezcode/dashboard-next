@@ -1,6 +1,7 @@
 import Form from '@/app/ui/invoices/edit-form';
 import Breadcrumbs from '@/app/ui/invoices/breadcrumbs';
 import { fetchCustomers, fetchInvoiceById } from '@/app/lib/data';
+import { notFound } from 'next/navigation';
 
 interface Props{
   params:{
@@ -12,7 +13,9 @@ export default async function EditInvoicePage({params: {id}}: Props) {
   const [customers, invoice] = await Promise.all([
     fetchCustomers(),
     fetchInvoiceById(id)
-  ]) 
+  ])
+
+  if (!invoice) notFound()
 
   return (
     <main>
